@@ -30,5 +30,17 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(myIntent2)
         }
+
+
+        btnSendTo.setOnClickListener {
+            val inputPhoneNum = edtPhoneNumber.text.toString()
+
+            // Intent에, 어디로 전화를 걸지 알려줘야함. Uri를 이용해서 알려주자
+            val myUri = Uri.parse("smsto:${inputPhoneNum}")  // 띄어쓰기는 끼면 안됨.
+
+            val myIntent = Intent(Intent.ACTION_SENDTO, myUri)
+
+            startActivity(myIntent)
+        }
     }
 }
