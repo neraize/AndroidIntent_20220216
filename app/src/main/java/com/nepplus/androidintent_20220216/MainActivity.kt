@@ -48,5 +48,12 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(myIntent)
         }
+
+
+        btnNaverWebLink.setOnClickListener {
+            val myUri = Uri.parse("https://naver.com")
+            val myIntent = Intent(Intent.ACTION_VIEW, myUri)
+            startActivity(myIntent)
+        }
     }
 }
